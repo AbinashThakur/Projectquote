@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Favorite Quotes</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}" >
+
+  </head>
+
+  <body>
+    <nav style="margin-top:25px;margin-left:45px">
+      <a class="btn btn-primary" href="{{ url_for('quotes') }}">Add a quote</a>
+    </nav>
+    <br>
+
+    <div class="container theme-showcase" role="main">
+
+      <div style="color:#fff; background-color:orange", class="jumbotron">
+        <h1>Favorite Quotes</h1>
+      </div>
+      <!--for loop starts-->
+      {% for r in result %}
+      <div>
+      	<font style="font-size:18px;line-height:20px;">&nbsp;</font>
+      </div>
+      <div style ="color:#fff;background-color:#007bff;" class="py-2 w-50 mx-auto">
+        <font style="padding-left: 20px; padding-top:10px; padding-bottom:10px; font-size:18px;line-height:20px;">{{r.author}}</font>
+      </div>
+      
+       <div style ="color:#fff;font-size:28px;background-color:green;" class="py-2 w-50 mx-auto">
+        <font style="padding-left: 20px; padding-top:10px; padding-bottom:10px; font-size:18px;line-height:20px;">{{r.quote}}</font>
+      </div>
+      <!-- for loop ends here..-->
+      {% endfor %}
+    </div> <!-- /container -->
+
+  </body>
+</html>
